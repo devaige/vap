@@ -36,9 +36,9 @@ import com.tencent.qgame.animplayer.util.ALog
 import com.tencent.qgame.animplayer.util.IALog
 import com.tencent.qgame.animplayer.util.ScaleType
 import com.tencent.qgame.playerproj.R
-import kotlinx.android.synthetic.main.activity_anim_simple_demo.*
+import com.tencent.qgame.playerproj.databinding.ActivityAnimSimpleDemoBinding
 import java.io.File
-import java.util.*
+import java.util.Random
 
 
 /**
@@ -61,7 +61,7 @@ class AnimVapxDemoActivity : Activity(), IAnimListener {
     // 视频信息
     data class VideoInfo(val fileName: String, val md5: String)
 
-    private val videoInfo = VideoInfo("vapx.mp4", "f981e0f094ead842ad5ae99f1ffaa1a1")
+    private val videoInfo = VideoInfo("video_vapx.mp4", "48d8b195bd8601c1a61e80618b4f3007")
 
     // 动画View
     private lateinit var animView: AnimView
@@ -72,9 +72,11 @@ class AnimVapxDemoActivity : Activity(), IAnimListener {
 
     private var lastToast: Toast? = null
 
+    private lateinit var binding: ActivityAnimSimpleDemoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_anim_simple_demo)
+        binding = ActivityAnimSimpleDemoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         // 文件加载完成后会调用init方法
         loadFile()
     }
@@ -85,7 +87,7 @@ class AnimVapxDemoActivity : Activity(), IAnimListener {
         // 初始化调试开关
         initTestView()
         // 获取动画view
-        animView = playerView
+        animView = binding.playerView
         // 居中（根据父布局按比例居中并裁剪）
         animView.setScaleType(ScaleType.CENTER_CROP)
         /**
@@ -252,17 +254,17 @@ class AnimVapxDemoActivity : Activity(), IAnimListener {
 
 
     private fun initTestView() {
-        btnLayout.visibility = View.VISIBLE
+        binding.btnLayout.visibility = View.VISIBLE
         /**
          * 开始播放按钮
          */
-        btnPlay.setOnClickListener {
+        binding.btnPlay.setOnClickListener {
             play(videoInfo)
         }
         /**
          * 结束视频按钮
          */
-        btnStop.setOnClickListener {
+        binding.btnStop.setOnClickListener {
             animView.stopPlay()
         }
     }
