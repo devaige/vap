@@ -50,7 +50,7 @@ class AnimSimpleDemoActivity : Activity(), IAnimListener {
     data class VideoInfo(val fileName: String, val md5: String)
 
     // ps：每次修改mp4文件，但文件名不变，记得先卸载app，因为assets同名文件不会进行替换
-    private val videoInfo = VideoInfo("video_digital_human.mp4", "ed0cfd4d4a19e13c2ced1b5582e1c3d1")
+    private val videoInfo = VideoInfo("video_sample.mp4", "202cf864283aa48a79b4bf8fee526870")
 
     // 动画View
     private lateinit var animView: AnimView
