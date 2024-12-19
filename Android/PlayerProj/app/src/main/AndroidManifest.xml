@@ -23,6 +23,7 @@
         <activity android:name=".player.AnimVapxDemoActivity" android:screenOrientation="portrait"/>
         <activity android:name=".player.AnimActiveDemoActivity" android:screenOrientation="portrait"/>
         <activity android:name=".player.AnimSpecialSizeDemoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".player.AnimTestDemoActivity" android:screenOrientation="portrait"/>
 
     </application>
 

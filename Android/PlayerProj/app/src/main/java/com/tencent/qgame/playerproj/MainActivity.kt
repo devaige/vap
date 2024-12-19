@@ -22,6 +22,7 @@ import com.tencent.qgame.playerproj.databinding.ActivityMainBinding
 import com.tencent.qgame.playerproj.player.AnimActiveDemoActivity
 import com.tencent.qgame.playerproj.player.AnimSimpleDemoActivity
 import com.tencent.qgame.playerproj.player.AnimSpecialSizeDemoActivity
+import com.tencent.qgame.playerproj.player.AnimTestDemoActivity
 import com.tencent.qgame.playerproj.player.AnimVapxDemoActivity
 
 
@@ -43,6 +44,9 @@ class MainActivity : Activity() {
         }
         binding.btn4.setOnClickListener {
             startActivity(Intent(this, AnimSpecialSizeDemoActivity::class.java))
+        }
+        binding.btn5.setOnClickListener {
+            startActivity(Intent(this, AnimTestDemoActivity::class.java))
         }
     }
 
